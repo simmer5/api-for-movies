@@ -1,9 +1,12 @@
 require("dotenv").config();
+const cors = require("cors");
 const axios = require("axios");
 const express = require("express");
 const app = express();
 
 const PORT = process.env.PORT || 3001;
+
+app.use(cors());
 
 app.get("/api/movies", async (req, res) => {
   try {
